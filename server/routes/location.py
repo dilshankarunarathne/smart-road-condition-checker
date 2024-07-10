@@ -20,21 +20,6 @@ async def register_user(
         password: str = Form(...),
         is_admin=False
 ):
-    """
-    The endpoint for registering a new user
-
-    Args:
-        username (str): the username of the user
-        email (str): the email of the user
-        password (str): the password of the user
-        is_admin (bool): whether the user is an admin
-
-    Returns:
-        (UserInDB) The user that was registered
-
-    Raises:
-        HTTPException: if the username already exists
-    """
     if user_exists(username):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
