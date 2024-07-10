@@ -1,8 +1,26 @@
 from datetime import datetime
+from pymongo import MongoClient
 
 
 class Pothole:
-    id: int
-    lon: str
-    lat: str
-    identified_time: datetime
+    def __init__(self, _id, lon, lat, number_of_pot_holes, identified_time):
+        self._id = _id
+        self.lon = lon
+        self.lat = lat
+        self.number_of_pot_holes = number_of_pot_holes
+        self.identified_time = identified_time
+
+    def to_dict(self):
+        return {
+            "_id": self._id,
+            "lon": self.lon,
+            "lat": self.lat,
+            "number_of_pot_holes": self.number_of_pot_holes,
+            "identified_time": self.identified_time,
+        }
+
+    def save_to_mongo(self, db_name, collection_name):
+        client = MongoClient('localhost', 27017)
+        db = client[db_name]
+        collection = db[collection_name]
+        collection.insert_one(self.to_dict())
