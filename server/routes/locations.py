@@ -7,7 +7,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 
 
 router = APIRouter(
-    prefix="/api/auth",
+    prefix="/api/locations",
     tags=["auth"],
     responses={404: {"description": "The requested page was not found"}},
 )
