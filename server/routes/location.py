@@ -41,18 +41,6 @@ async def register_user(
 async def login_for_access_token(
         form_data: Annotated[OAuth2PasswordRequestForm, Depends()]
 ):
-    """
-    The endpoint for logging in a user
-
-    Args:
-        form_data (OAuth2PasswordRequestForm): the form data for the user
-
-    Returns:
-        (dict) The access token for the user
-
-    Raises:
-        HTTPException: if the username or password is incorrect
-    """
     user = authenticate_user(form_data.username, form_data.password)
     if not user:
         raise HTTPException(
