@@ -5,6 +5,7 @@ This project develops an electronic device to identify the road condition, befor
 ![img.png](img.png)
 
 This system helps drivers to alert the road condition. This information is made available in the Google map and when we search Google map we will be able to know about the road condition too. Using this system people can identify road condition whether it is a perfect road along which can go without any accident and without any time waste. Here the current situation on the road is automatically identified by the pictures and sensors and that data will be updated to the Google map from the previous vehicles passed through the road. Here there is a device with a camera and sensors that detect width of road and crack points of the road. This device will be mounted on the vehicle.
+
 A mobile application is used to automatically update these data to the Google map. When a vehicle goes through a broken road system will automatically recognize them and update it to Google instantly. Then next vehicle can avoid using that road and can prevent the harm.
 
 [![Version](https://img.shields.io/badge/version-0.1-brightgreen.svg)](https://pypi.org/project/ad-topic-recommender/)
