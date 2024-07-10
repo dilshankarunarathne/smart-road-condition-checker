@@ -70,3 +70,4 @@ target/
 ML/p-1/roboflow.zip
 ML/final tests/video.mp4
 ML/final tests/best.pt
+ML/final tests/output.avi
