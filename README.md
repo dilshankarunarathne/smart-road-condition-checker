@@ -11,6 +11,8 @@ This system helps drivers to alert the road condition. This information is made 
 
 A mobile application is used to automatically update these data to the Google map. When a vehicle goes through a broken road system will automatically recognize them and update it to Google instantly. Then next vehicle can avoid using that road and can prevent the harm.
 
+Using these system drivers and the other people who visit our country as a tourist can get more benefits using this system. Also we can save the additional money which is to be paid for inspectors who check the road condition. People can save additional time that they spend for traffic. And now the days we can save our fuel too.
+
 
 
 ## License
