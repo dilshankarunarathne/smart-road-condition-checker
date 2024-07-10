@@ -1,6 +1,10 @@
 ML/datasets
 ML/runs
 
+ML/yolov3.weights
+ML/yolov8n.pt
+ML/yolov8s.pt
+
 
 # Compiled class file
 *.class
