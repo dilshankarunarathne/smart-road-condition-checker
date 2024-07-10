@@ -13,6 +13,8 @@ A mobile application is used to automatically update these data to the Google ma
 
 Using these system drivers and the other people who visit our country as a tourist can get more benefits using this system. Also we can save the additional money which is to be paid for inspectors who check the road condition. People can save additional time that they spend for traffic. And now the days we can save our fuel too.
 
+Another special purpose is that State and Local maintenance departments are tasked with keeping roads in good repair, which includes monitoring the roads to detect the presence of cracks, potholes, and other distress. Currently, this is done by inspectors, who drive out to each location and record the conditions on paper. This is a tedious and often inconsistent process. Using specialized vehicles outfitted with sensors can automate the data collection process significantly. However, these vehicles are expensive, costing as much as $600,000. Another way of collecting data is through citizen reports, but these are often only about severe and acute problems. In this project, we present a system to monitor the condition of roads on a continuous basis, at low cost, with consistent quality, and with minimal human intervention.
+
 
 
 ## License
