@@ -1,5 +1,7 @@
 # Smart Road Condition Checker
 
+This project develops an electronic device to identify the road condition, before starting the journey. Using this system, drivers and the other people who visit our country as a tourist can get more benefits. Also, we can save the additional money which is to be paid for inspectors who check the road condition can be reduced. People can save additional time that they spend for roads which are not in a good condition.
+
 
 
 [![Version](https://img.shields.io/badge/version-0.1-brightgreen.svg)](https://pypi.org/project/ad-topic-recommender/)
