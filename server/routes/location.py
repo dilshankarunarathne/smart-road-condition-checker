@@ -5,22 +5,6 @@ from typing import Annotated
 from fastapi import APIRouter, Form, HTTPException, status, Depends
 from fastapi.security import OAuth2PasswordRequestForm
 
-"""
-    API router for auth endpoint
-    
-    Attributes:
-        router (APIRouter): the router for the endpoint
-
-    Methods:
-        [POST] /api/auth/register
-        register_user: the endpoint for registering a new user
-
-        [POST] /api/auth/login
-        login_for_access_token: the endpoint for logging in a user
-
-        [POST] /api/auth/logout
-        logout: the endpoint for logging out a user
-"""
 
 router = APIRouter(
     prefix="/api/auth",
