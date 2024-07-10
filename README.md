@@ -15,7 +15,7 @@ Using these system drivers and the other people who visit our country as a touri
 
 Another special purpose is that State and Local maintenance departments are tasked with keeping roads in good repair, which includes monitoring the roads to detect the presence of cracks, potholes, and other distress. Currently, this is done by inspectors, who drive out to each location and record the conditions on paper. This is a tedious and often inconsistent process. Using specialized vehicles outfitted with sensors can automate the data collection process significantly. However, these vehicles are expensive, costing as much as $600,000. Another way of collecting data is through citizen reports, but these are often only about severe and acute problems. In this project, we present a system to monitor the condition of roads on a continuous basis, at low cost, with consistent quality, and with minimal human intervention.
 
-
+My approach involves using images collected by commodity devices such as sensors to obtain information about the road condition. These devices can mounted in service-vehicles like cabs, garbage trucks, police cars, public vehicle etc. But under the current economic crisis in Sri Lanka I hope to minimize the further cost to develop the system by using a specific vehicle. Which already make regular rounds on city roads for other purposes . With this system the whole street network of a city can be continuously monitored at a much lower initial and operating cost than traditional methods.
 
 ## License
 
