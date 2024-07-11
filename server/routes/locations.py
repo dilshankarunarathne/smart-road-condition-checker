@@ -1,5 +1,5 @@
-from fastapi import APIRouter
-
+from fastapi import APIRouter, Response
+from fastapi.responses import HTMLResponse
 
 router = APIRouter(
     prefix="/api/locations",
@@ -8,6 +8,8 @@ router = APIRouter(
 )
 
 
-@router.post("/")
+@router.get("/", response_class=HTMLResponse)
 async def get_locations():
-    return "Hello"
+    with open('server/static/google map.html', 'r') as file:
+        html_content = file.read()
+    return html_content
