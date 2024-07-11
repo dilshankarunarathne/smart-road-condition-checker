@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from routes import locations
+from server.routes import locations
 
 app = FastAPI()
 
