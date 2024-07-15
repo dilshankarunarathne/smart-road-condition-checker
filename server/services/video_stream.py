@@ -30,7 +30,7 @@ def set_resolution(url: str, index: int = 1, verbose: bool = False):
 
 def set_quality(url: str, value: int = 1, verbose: bool = False):
     try:
-        if value >= 10 and value <= 63:
+        if 10 <= value <= 63:
             requests.get(url + "/control?var=quality&val={}".format(value))
     except:
         print("SET_QUALITY: something went wrong")
