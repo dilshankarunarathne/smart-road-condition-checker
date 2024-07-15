@@ -53,7 +53,7 @@ def start_stream_capture():
             results = model.predict(frame)
 
             for result in results:
-                if len(result.boxes.xyxy) > 0: 
+                if len(result.boxes.xyxy) > 0:
                     x1, y1, x2, y2 = map(int, result.boxes.xyxy[0])
                     cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
 
