@@ -2,14 +2,11 @@ import cv2
 import requests
 from ultralytics import YOLO
 
-# ESP32 URL
 URL = "http://192.168.59.169"
 AWB = True
 
-# Load the YOLO model
 model = YOLO('../assets/best.pt')
 
-# Face recognition and opencv setup
 cap = cv2.VideoCapture(URL + ":81/stream")
 
 
@@ -53,11 +50,10 @@ def start_stream_capture():
         if cap.isOpened():
             ret, frame = cap.read()
 
-            # Apply the model's prediction to the frame
             results = model.predict(frame)
 
             for result in results:
-                if len(result.boxes.xyxy) > 0:  # Check if there are any detections
+                if len(result.boxes.xyxy) > 0: 
                     x1, y1, x2, y2 = map(int, result.boxes.xyxy[0])
                     cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
 
