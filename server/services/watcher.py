@@ -4,7 +4,7 @@ from server.models.pothole import Pothole
 
 
 def get_location() -> (float, float):
-    pass
+    pass  # TODO
 
 
 def identified_pothole(number_of_pot_holes):
