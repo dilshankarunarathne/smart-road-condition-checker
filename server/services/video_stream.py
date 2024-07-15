@@ -45,38 +45,39 @@ def set_awb(url: str, awb: int = 1):
     return awb
 
 
-
 set_resolution(URL, index=8)
 
-while True:
-    if cap.isOpened():
-        ret, frame = cap.read()
 
-        # Apply the model's prediction to the frame
-        results = model.predict(frame)
+def start_stream_capture():
+    while True:
+        if cap.isOpened():
+            ret, frame = cap.read()
 
-        for result in results:
-            if len(result.boxes.xyxy) > 0:  # Check if there are any detections
-                x1, y1, x2, y2 = map(int, result.boxes.xyxy[0])
-                cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+            # Apply the model's prediction to the frame
+            results = model.predict(frame)
 
-        cv2.imshow("frame", frame)
+            for result in results:
+                if len(result.boxes.xyxy) > 0:  # Check if there are any detections
+                    x1, y1, x2, y2 = map(int, result.boxes.xyxy[0])
+                    cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
 
-        key = cv2.waitKey(1)
+            cv2.imshow("frame", frame)
 
-        if key == ord('r'):
-            idx = int(input("Select resolution index: "))
-            set_resolution(URL, index=idx, verbose=True)
+            key = cv2.waitKey(1)
 
-        elif key == ord('q'):
-            val = int(input("Set quality (10 - 63): "))
-            set_quality(URL, value=val)
+            if key == ord('r'):
+                idx = int(input("Select resolution index: "))
+                set_resolution(URL, index=idx, verbose=True)
 
-        elif key == ord('a'):
-            AWB = set_awb(URL, AWB)
+            elif key == ord('q'):
+                val = int(input("Set quality (10 - 63): "))
+                set_quality(URL, value=val)
 
-        elif key == ord('c'):
-            break
+            elif key == ord('a'):
+                AWB = set_awb(URL, AWB)
 
-cv2.destroyAllWindows()
-cap.release()
+            elif key == ord('c'):
+                break
+
+    cv2.destroyAllWindows()
+    cap.release()
