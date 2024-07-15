@@ -18,7 +18,7 @@ async def get_locations():
 
     with open('server/static/google map.html', 'r') as file:
         html_content = file.read()
-
+    # todo: need to add replacement tags in the html code, and make it able to replace a number of coordinates
     coordinates_js = ', '.join([f'{{lat: "{coord["lat"]}", lng: "{coord["lng"]}"}}' for coord in coordinates])
 
     html_content = html_content.replace('__COORDINATES__', coordinates_js)
