@@ -13,8 +13,6 @@ def get_location() -> (float, float):
 
     soup = BeautifulSoup(response.text, 'html.parser')
 
-    # Extract the latitude and longitude from the HTML
-    # This assumes that the latitude and longitude are contained in elements with ids 'lat' and 'lon' respectively
     lat = float(soup.find(id='lat').text)
     lon = float(soup.find(id='lon').text)
 
