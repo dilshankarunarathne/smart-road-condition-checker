@@ -2,8 +2,7 @@ from pymongo import MongoClient
 
 
 class Pothole:
-    def __init__(self, _id, lon, lat, number_of_pot_holes, identified_time):
-        self._id = _id
+    def __init__(self, lon, lat, number_of_pot_holes, identified_time):
         self.lon = lon
         self.lat = lat
         self.number_of_pot_holes = number_of_pot_holes
@@ -11,7 +10,6 @@ class Pothole:
 
     def to_dict(self):
         return {
-            "_id": self._id,
             "lon": self.lon,
             "lat": self.lat,
             "number_of_pot_holes": self.number_of_pot_holes,
