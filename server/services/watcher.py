@@ -7,12 +7,10 @@ from bs4 import BeautifulSoup
 
 
 def get_location() -> (float, float):
-    ESP32_IP_ADDRESS = "http://192.168.1.100" 
+    ESP32_IP_ADDRESS = "http://192.168.1.100"
 
-    # Make a GET request to the ESP32's IP address
     response = requests.get(ESP32_IP_ADDRESS)
 
-    # Parse the HTML response using BeautifulSoup
     soup = BeautifulSoup(response.text, 'html.parser')
 
     # Extract the latitude and longitude from the HTML
