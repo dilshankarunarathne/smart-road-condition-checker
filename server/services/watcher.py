@@ -29,4 +29,4 @@ def add_to_database(number_of_pot_holes, lon, lat):
     timestamp = datetime.now()
     new_pothole = Pothole(lon=lon, lat=lat, number_of_pot_holes=number_of_pot_holes,
                           identified_time=timestamp)
-    new_pothole.save_to_mongo(db_name="pothole", collection_name="your_collection_name")
+    new_pothole.save_to_mongo(db_name="pothole", collection_name="data")
