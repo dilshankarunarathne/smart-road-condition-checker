@@ -21,3 +21,5 @@ class Pothole:
         db = client[db_name]
         collection = db[collection_name]
         collection.insert_one(self.to_dict())
+
+    
