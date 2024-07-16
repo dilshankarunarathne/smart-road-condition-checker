@@ -32,9 +32,7 @@
             const infoWindow = new google.maps.InfoWindow();
             const map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
 
-            var coordinates = [
-                
-            ];
+            var coordinates = __COORDINATES__;
 
             for (var i = 0; i < coordinates.length; i++) {
                 var myLatlng = new google.maps.LatLng(coordinates[i].lat, coordinates[i].lng);
