@@ -16,7 +16,7 @@ def get_location() -> (float, float):
     lat = float(soup.find(id='lat').text)
     lon = float(soup.find(id='lon').text)
 
-    return (lon, lat)
+    return lon, lat
 
 
 def identified_pothole(number_of_pot_holes):
