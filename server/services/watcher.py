@@ -1,9 +1,9 @@
 from datetime import datetime
 
-from server.models.pothole import Pothole
-
 import requests
 from bs4 import BeautifulSoup
+
+from server.models.pothole import Pothole
 
 ESP32_IP_ADDRESS = "http://192.168.1.100"
 
