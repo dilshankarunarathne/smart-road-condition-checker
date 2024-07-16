@@ -5,10 +5,10 @@ from server.models.pothole import Pothole
 import requests
 from bs4 import BeautifulSoup
 
+ESP32_IP_ADDRESS = "http://192.168.1.100"
+
 
 def get_location() -> (float, float):
-    ESP32_IP_ADDRESS = "http://192.168.1.100"
-
     response = requests.get(ESP32_IP_ADDRESS)
 
     soup = BeautifulSoup(response.text, 'html.parser')
