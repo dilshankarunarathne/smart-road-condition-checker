@@ -5,7 +5,7 @@ from ultralytics import YOLO
 URL = "http://192.168.59.169"
 AWB = True
 
-model = YOLO('../assets/best.pt')
+model = YOLO('best.pt')
 
 cap = cv2.VideoCapture(URL + ":81/stream")
 
