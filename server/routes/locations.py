@@ -17,7 +17,7 @@ async def get_locations():
     with open('server/static/google map.html', 'r') as file:
         html_content = file.read()
 
-    
+    # Replace __COORDINATES__ with the actual coordinates
 
     html_content = html_content.replace('__COORDINATES__', coordinates_js)
 
