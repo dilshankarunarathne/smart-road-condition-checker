@@ -1,6 +1,8 @@
 from fastapi import APIRouter, Response
 from fastapi.responses import HTMLResponse
 
+from server.services.query import query_all_locations
+
 router = APIRouter(
     prefix="/api/locations",
     tags=["auth"],
