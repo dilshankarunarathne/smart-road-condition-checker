@@ -22,4 +22,9 @@ class Pothole:
         collection = db[collection_name]
         collection.insert_one(self.to_dict())
 
-    
+    @staticmethod
+    def get_all_locations(db_name, collection_name):
+        client = MongoClient('localhost', 27017)
+        db = client[db_name]
+        collection = db[collection_name]
+        return [location for location in collection.find()]
