@@ -10,11 +10,7 @@ router = APIRouter(
 
 @router.get("/", response_class=HTMLResponse)
 async def get_locations():
-    coordinates = [
-        {"lat": "18.9750", "lng": "72.8258"},
-        {"lat": "19.0760", "lng": "72.8777"},
-        {"lat": "19.2183", "lng": "72.9781"}
-    ]
+    coordinates = query_all_locations
 
     with open('server/static/google map.html', 'r') as file:
         html_content = file.read()
