@@ -22,7 +22,6 @@ def get_location() -> (float, float):
 def identified_pothole(number_of_pot_holes):
     (lon, lat) = get_location()
     add_to_database(number_of_pot_holes, lon, lat)
-    pass
 
 
 def add_to_database(number_of_pot_holes, lon, lat):
