@@ -2,6 +2,8 @@ import cv2
 import requests
 from ultralytics import YOLO
 
+from server.services.watcher import identified_pothole
+
 URL = "http://192.168.59.169"
 AWB = True
 
@@ -54,10 +56,7 @@ def start_stream_capture():
 
             for result in results:
                 if len(result.boxes.xyxy) > 0:
-                    x1, y1, x2, y2 = map(int, result.boxes.xyxy[0])
-                    cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
-
-            cv2.imshow("frame", frame)
+                    identified_pothole(len(result.boxes.xyxy))
 
             key = cv2.waitKey(1)
 
@@ -75,5 +74,4 @@ def start_stream_capture():
             elif key == ord('c'):
                 break
 
-    cv2.destroyAllWindows()
     cap.release()
