@@ -8,6 +8,7 @@ URL = "http://192.168.59.169"
 AWB = True
 
 model = YOLO('server/assets/best.pt')
+print("model loaded...")
 
 cap = cv2.VideoCapture(URL + ":81/stream")
 
@@ -27,27 +28,11 @@ def set_resolution(url: str, index: int = 1, verbose: bool = False):
         print("SET_RESOLUTION: something went wrong")
 
 
-def set_quality(url: str, value: int = 1, verbose: bool = False):
-    try:
-        if 10 <= value <= 63:
-            requests.get(url + "/control?var=quality&val={}".format(value))
-    except:
-        print("SET_QUALITY: something went wrong")
-
-
-def set_awb(url: str, awb: int = 1):
-    try:
-        awb = not awb
-        requests.get(url + "/control?var=awb&val={}".format(1 if awb else 0))
-    except:
-        print("SET_QUALITY: something went wrong")
-    return awb
-
-
 set_resolution(URL, index=8)
 
 
 def start_stream_capture():
+    print("video stream monitoring started...")
     while True:
         if cap.isOpened():
             ret, frame = cap.read()
@@ -57,21 +42,3 @@ def start_stream_capture():
             for result in results:
                 if len(result.boxes.xyxy) > 0:
                     identified_pothole(len(result.boxes.xyxy))
-
-            key = cv2.waitKey(1)
-
-            if key == ord('r'):
-                idx = int(input("Select resolution index: "))
-                set_resolution(URL, index=idx, verbose=True)
-
-            elif key == ord('q'):
-                val = int(input("Set quality (10 - 63): "))
-                set_quality(URL, value=val)
-
-            elif key == ord('a'):
-                AWB = set_awb(URL, AWB)
-
-            elif key == ord('c'):
-                break
-
-    cap.release()
