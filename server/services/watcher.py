@@ -13,10 +13,20 @@ def get_location() -> (float, float):
 
     soup = BeautifulSoup(response.text, 'html.parser')
 
-    lat = float(soup.find(id='lat').text)
-    lon = float(soup.find(id='lon').text)
+    try:
+        table = soup.find('table')
+        rows = table.find_all('tr')
 
-    return lon, lat
+        lat = float(rows[0].find('td').text)
+        lon = float(rows[1].find('td').text)
+
+        print("Location: ", lat, ", ", lon)
+
+        return lon, lat
+    except:
+        print("Error in getting location")
+
+    return 0, 0
 
 
 def identified_pothole(number_of_pot_holes):
