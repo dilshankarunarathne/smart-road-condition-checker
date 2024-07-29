@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Smart Road Condition Checker</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+    <header class="text-center py-16 bg-blue-500 text-white">
+        <h1 class="text-5xl font-bold">The Smart Road Condition Checker</h1>
+    </header>
+
+    <main class="container mx-auto px-4 py-16">
+        <div id="dvMap" class="w-full h-96 rounded-lg overflow-hidden shadow-lg"></div>
+    </main>
+    
+    <footer class="text-center py-8 bg-blue-500 text-white">
+        <p>&copy; 2024 The Smart Road Condition Checker</p>
+    </footer>
+    
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+    
+    <script type="text/javascript">
+        window.onload = function () {
+            const mapOptions = {
+                center: new google.maps.LatLng(6.797817, 80.020515), // Center the map on the new pin
+                zoom: 15, // Adjust zoom level to ensure the pin is visible
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            const map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+    
+            const newPinCoordinates = new google.maps.LatLng(6.797817, 80.020515);
+    
+            const marker = new google.maps.Marker({
+                position: newPinCoordinates,
+                map: map,
+                title: "Pothole"
+            });
+        }
+    </script>
+    
+    </body>
+    </html>
